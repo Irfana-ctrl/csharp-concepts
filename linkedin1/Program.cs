@@ -1,8 +1,10 @@
-﻿using System;
+﻿using StudentDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace linkedin1
 {
@@ -10,6 +12,9 @@ namespace linkedin1
     {
         static void Main(string[] args)
         {
+            StudentManager studentmanager = new StudentManager();
+           studentmanager.GetDetails();
+            
             /* for (int i = 1; i <= 10; i++)
                  Console.WriteLine(i);
              for (int a = 10; a > 0; a--)
@@ -22,6 +27,7 @@ namespace linkedin1
 
              }
              Console.ReadLine();*/
+            /* student manager using array
             Console.WriteLine("How many students to enter");
             var studentCount = int.Parse(Console.ReadLine());
 
@@ -42,8 +48,15 @@ namespace linkedin1
                
             }
             Console.ReadLine();
+            */
+            //student manager using list
+            
+            
+           
 
-            }
         }
+
+       
     }
+}
 
