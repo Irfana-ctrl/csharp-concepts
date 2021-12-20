@@ -1,4 +1,4 @@
-﻿using StudentDB;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,50 +12,30 @@ namespace linkedin1
     {
         static void Main(string[] args)
         {
-            StudentManager studentmanager = new StudentManager();
-           studentmanager.GetDetails();
-            
-            /* for (int i = 1; i <= 10; i++)
-                 Console.WriteLine(i);
-             for (int a = 10; a > 0; a--)
-                 Console.WriteLine(a);*/
-            /*
-             int[] studentGrade = new int[] { 12, 25, 88, 96, 100 };
-             for (int i = 0; i < studentGrade.Length; i++)
-             {
-                 Console.WriteLine(studentGrade[i]);
-
-             }
-             Console.ReadLine();*/
-            /* student manager using array
-            Console.WriteLine("How many students to enter");
-            var studentCount = int.Parse(Console.ReadLine());
-
-            var studentName = new string[studentCount];
-            var studentGrade = new int[studentCount];
-
-            for (int i = 0; i < studentCount; i++)
+            // StudentManager studentmanager = new StudentManager();
+            // studentmanager.GetDetails();
+            List<StudentManager2> student = new List<StudentManager2>();
+            bool adding = true;
+            while (adding)
             {
-                Console.WriteLine("Enter the name of the student");
-                studentName[i] = Console.ReadLine();
-                Console.WriteLine("Enter the grade");
-                studentGrade[i] = int.Parse(Console.ReadLine());
+                StudentManager2 student1 = new StudentManager2();
+                student1.getDetails();
+                student.Add(student1);
+                StudentManager2.count++;
+                Console.WriteLine("Student Count: {0}", StudentManager2.count);
+                Console.WriteLine("Do you wish to continue y/n?");
+                if (Console.ReadLine() != "y")
+                    adding = false;
             }
-            for (int i = 0; i < studentCount; i++)
+            foreach (var students in student)
             {
-
-                Console.WriteLine("Student name: {0} \t Grade:{1}", studentName[i], studentGrade[i]);
+                Console.WriteLine("Name: {0}  Grade: {1}  Birthday: {2}  Address: {3}  Phone: {4}", students.name, students.grade,students.birthday,students.address,students.phone);
                
+
             }
             Console.ReadLine();
-            */
-            //student manager using list
-            
-            
-           
 
         }
-
        
     }
 }
